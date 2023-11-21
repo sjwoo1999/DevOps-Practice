@@ -32,7 +32,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          Text
         </a>
         <p>
             Visitors : {counter.counter}
