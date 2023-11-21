@@ -1,7 +1,24 @@
+import React, { useEffect, useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  const [counter, setCounter] = useState({'counter': 0});
+
+  const fetchCounterData = () => {
+    fetch(`http://223.130.162.209/myweb/api/v1/counter`)
+      .then(res => {
+        return res.json();
+      })
+      .then(data => {
+        setCounter(data);
+      })
+  };
+
+  useEffect(() => {
+    fetchCounterData();
+  }, []);
+  
   return (
     <div className="App">
       <header className="App-header">
@@ -18,7 +35,7 @@ function App() {
           Learn React
         </a>
         <p>
-            Visitors
+            Visitors : {counter.counter}
         </p>
       </header>
     </div>
