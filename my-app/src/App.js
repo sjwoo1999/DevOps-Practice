@@ -17,6 +17,9 @@ function App() {
         >
           Learn React
         </a>
+        <p>
+            Visitors
+        </p>
       </header>
     </div>
   );
